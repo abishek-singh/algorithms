@@ -1,4 +1,6 @@
-#! /usr/bin/env python2
+#! /usr/bin/env py2
+
+import random
 
 
 class EgyptianFraction(object):
@@ -17,6 +19,7 @@ class EgyptianFraction(object):
 
         if self.nr % self.dr == 0:
             print self.nr / self.dr
+            return
 
         if self.nr > self.dr:
             print "1 + ",
@@ -33,4 +36,7 @@ class EgyptianFraction(object):
 
 
 if __name__ == "__main__":
-    EgyptianFraction(6, 14).egyptian_fraction()
+    nr = random.randint(10, 50)
+    dr = random.randint(10, 50)
+    print str(nr) + "/" + str(dr) + " ===> ",
+    EgyptianFraction(nr, dr).egyptian_fraction()
